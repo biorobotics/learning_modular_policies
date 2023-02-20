@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="leg" params="num mount_xyz mount_rpy">
+
+    <!-- connect leg to chassis -->
+<joint name="base_leg_${num}" type="fixed">
+  <parent link="chassis"/>
+  <child link="leg_${num}/J1_base/INPUT_INTERFACE"/>
+<origin xyz="${mount_xyz}" rpy="${mount_rpy}"/>
+</joint>
+
+<xacro:actuator name="leg_${num}/J1_base"          child="leg_${num}/shoulder_bracket" type="X8_9" limits="${[pi/6,5*pi/6]}"/>
+<xacro:bracket  name="leg_${num}/shoulder_bracket" child="leg_${num}/J2_shoulder" type="X5HeavyRightInside"/>
+<xacro:actuator name="leg_${num}/J2_shoulder"      child="leg_${num}/shoulder_elbow" type="X8_16" limits="${[-pi/4,pi/4]}"/>
+<xacro:link     name="leg_${num}/shoulder_elbow"   child="leg_${num}/J3_elbow" extension="0.275" twist="${pi}"/>
+<xacro:actuator name="leg_${num}/J3_elbow"         child="leg_${num}/elbow_end" type="X5_9" limits="${[0.785,2.356]}"/>
+<xacro:link     name="leg_${num}/elbow_end"        child="leg_${num}/foot" extension="0.275" twist="0"/>
+
+
+  <link name="leg_${num}/foot/INPUT_INTERFACE">
+    <inertial>
+      <origin xyz="0 0 -.02" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0.0001"  ixy="0"  ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+            <origin xyz="0 0 -.02" rpy="0 0 0"/>
+
+      <xacro:black_material/>
+    </visual>
+  <collision>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+                  <origin xyz="0 0 -.02" rpy="0 0 0"/>
+
+  </collision>
+  </link>
+
+  <!-- use rubber bit for foot end link; necessary to provide output for HEBI components to attach to. -->
+
+
+  </xacro:macro>
+</robot>

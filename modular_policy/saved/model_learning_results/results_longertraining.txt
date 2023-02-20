@@ -1,0 +1,81 @@
+
+
+MLP 5 layer, 300 hidden
+
+wnwwnw (100, 2) MLP differences:
+Mean: 7.675917148590088
+Std: 4.889298915863037
+wnwwnw (1000, 2) MLP differences:
+Mean: 6.138680458068848
+Std: 4.050942420959473
+wnwwnw (5000, 2) MLP differences:
+Mean: 3.4558937549591064
+Std: 3.0093905925750732
+
+llllll (100, 2) MLP differences:
+Mean: 8.685004234313965
+Std: 4.865706920623779
+llllll (1000, 2) MLP differences:
+Mean: 7.835266590118408
+Std: 4.243271827697754
+llllll (5000, 2) MLP differences:
+Mean: 7.83871603012085
+Std: 4.109890937805176
+
+GNN, one design
+------------------------------
+wnwwnw (100, 2) GNN differences:
+Mean: 2.5218284130096436
+Std: 2.769721269607544
+------------------------------
+wnwwnw (1000, 2) GNN differences:
+Mean: 2.17026948928833
+Std: 2.524754047393799
+------------------------------
+wnwwnw (5000, 2) GNN differences:
+Mean: 2.0631842613220215
+Std: 2.2342641353607178
+------------------------------
+llllll (100, 2) GNN differences:
+Mean: 4.693771839141846
+Std: 3.479120969772339
+------------------------------
+llllll (1000, 2) GNN differences:
+Mean: 5.2137603759765625
+Std: 3.3712222576141357
+------------------------------
+llllll (5000, 2) GNN differences:
+Mean: 5.0416259765625
+Std: 3.158771514892578
+
+Multidesign
+learned_models/multidesign_pgnn_r100_ms2.pt
+------------------------------
+wnwwnw GNN differences:
+Mean: 2.4028401374816895
+Std: 2.749899387359619
+------------------------------
+llllll GNN differences:
+Mean: 5.068259239196777
+Std: 3.53294038772583
+learned_models/multidesign_pgnn_r1000_ms2.pt
+------------------------------
+wnwwnw GNN differences:
+Mean: 2.0955729484558105
+Std: 2.3948006629943848
+------------------------------
+llllll GNN differences:
+Mean: 5.254051685333252
+Std: 3.3526487350463867
+learned_models/multidesign_pgnn_r5000_ms2.pt
+------------------------------
+wnwwnw GNN differences:
+Mean: 2.239934206008911
+Std: 2.4226791858673096
+------------------------------
+llllll GNN differences:
+Mean: 5.303031921386719
+Std: 3.2957000732421875
+
+
+

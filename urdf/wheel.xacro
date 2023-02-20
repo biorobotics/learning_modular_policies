@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="wheel" params="num mount_xyz mount_rpy">
+
+    <!-- connect leg to chassis -->
+<joint name="base_wheel_${num}" type="fixed">
+  <parent link="chassis"/>
+  <child link="wheel_${num}/J1_base/INPUT_INTERFACE"/>
+<origin xyz="${mount_xyz}" rpy="${mount_rpy}"/>
+</joint>
+
+<xacro:actuator name="wheel_${num}/J1_base" child="wheel_${num}/shoulder_bracket" type="X5_9" limits="${[-pi/3,pi/3]}"/>
+<xacro:bracket  name="wheel_${num}/shoulder_bracket" child="wheel_${num}/J2_shoulder" type="X5HeavyRightOutside"/>
+<xacro:actuator name="wheel_${num}/J2_shoulder" child="wheel_${num}/wheel" type="X8_9"/>
+
+  <link name="wheel_${num}/wheel/INPUT_INTERFACE">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.498"/>
+      <inertia ixx="0.001"  ixy="0"  ixz="0" iyy="0.001" iyz="0" izz="0.002" />
+    </inertial>
+    <visual>
+      <geometry>
+         <cylinder length="0.0254" radius="0.105"/>
+      </geometry>
+            <origin xyz="0 0 0.015" rpy="0 0 0"/>
+
+      <xacro:black_material/>
+    </visual>
+  <collision>
+        <geometry>
+           <cylinder length="0.0254" radius="0.105"/>
+        </geometry>
+                  <origin xyz="0 0 0.015" rpy="0 0 0"/>
+
+  </collision>
+  </link>
+
+
+
+
+  </xacro:macro>
+</robot>

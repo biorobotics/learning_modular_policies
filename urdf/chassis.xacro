@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="chassis">
+
+  <link name="chassis">
+    <visual>
+      <geometry>
+        <mesh filename="base_plate.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
+      <xacro:silver_material/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="base_plate.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="${pi/2} 0 ${pi/2}" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <!--mass value="2.7"/no battery-->
+      <mass value="3.4"/><!-- with  1 battery -->
+      <inertia ixx="0.02" ixy="0.0" ixz="0.0" iyy="0.02" iyz="0.0" izz="0.05"/>
+      <origin rpy="0 0 0" xyz="-0.02 0 0"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <box size="0.15 0.02 0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.075 0 0.0195"/>
+      <xacro:silver_material/>
+    </visual>
+
+
+
+
+
+
+  </link>
+
+        <geometry>
+        <box size="0.15 0.02 0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.01 0 0.0345"/>
+
+
+  </xacro:macro>
+</robot>

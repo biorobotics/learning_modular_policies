@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wllllw"> 
+
+<xacro:include filename="hebi.xacro"/>
+<xacro:include filename="leg.xacro"/>
+<xacro:include filename="wheel.xacro"/>
+<xacro:include filename="chassis.xacro"/>
+<xacro:chassis/>
+
+<xacro:wheel num="1" mount_xyz="0.1524 0.0880 0" mount_rpy="${pi} 0 ${pi/6 - pi/2}"/> 
+
+<xacro:leg num="2" mount_xyz="0 0.1760    0.0095" mount_rpy="0 0 ${3*pi/6- pi/2}"/> 
+
+<xacro:leg num="3" mount_xyz="-0.1524 0.0880 0.0095" mount_rpy="0 0 ${5*pi/6- pi/2}"/> 
+
+<xacro:leg num="4" mount_xyz="-0.1524 -0.0880  0.0095" mount_rpy="0 0 ${7*pi/6- pi/2}"/> 
+
+<xacro:leg num="5" mount_xyz="0 -0.1760  0.0095" mount_rpy="0 0 ${9*pi/6- pi/2}"/> 
+
+<xacro:wheel num="6" mount_xyz="0.1524 -0.0880 0" mount_rpy="${pi} 0 ${11*pi/6- pi/2}"/> 
+
+</robot>

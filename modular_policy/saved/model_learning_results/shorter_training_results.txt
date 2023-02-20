@@ -1,0 +1,110 @@
+
+wnwwnw  Constant pred baseline:
+tensor(7.6640)
+llllll  Constant pred baseline:
+tensor(12.5311)
+
+MLP 5 layer, 300 hidden
+wnwwnw (100, 2) MLP differences:
+Mean: 7.514233589172363
+Std: 4.769354343414307
+wnwwnw (1000, 2) MLP differences:
+Mean: 6.604606628417969
+Std: 4.507064342498779
+wnwwnw (5000, 2) MLP differences:
+Mean: 5.310155868530273
+Std: 3.446641445159912
+
+llllll (100, 2) MLP differences:
+Mean: 9.955756187438965
+Std: 5.190961837768555
+llllll (1000, 2) MLP differences:
+Mean: 8.002690315246582
+Std: 4.2273054122924805
+llllll (5000, 2) MLP differences:
+Mean: 7.876537322998047
+Std: 4.076016902923584
+----------------------------
+
+MLP 7 layer, 250 hidden
+
+wnwwnw (100, 2) MLP differences:
+Mean: 7.509055137634277
+Std: 5.014299392700195
+wnwwnw (1000, 2) MLP differences:
+Mean: 7.463022232055664
+Std: 4.999565124511719
+wnwwnw (5000, 2) MLP differences:
+Mean: 7.454719543457031
+Std: 5.004439830780029
+
+llllll (100, 2) MLP differences:
+Mean: 11.289116859436035
+Std: 5.293712615966797
+llllll (1000, 2) MLP differences:
+Mean: 10.503639221191406
+Std: 4.965257167816162
+llllll (5000, 2) MLP differences:
+Mean: 9.810891151428223
+Std: 4.725933074951172
+
+
+GNN Single design
+------------------------------
+wnwwnw (100, 2) GNN differences:
+Mean: 2.400407075881958
+Std: 2.3914597034454346
+------------------------------
+wnwwnw (1000, 2) GNN differences:
+Mean: 2.311587333679199
+Std: 2.5421829223632812
+------------------------------
+wnwwnw (5000, 2) GNN differences:
+Mean: 2.358107328414917
+Std: 2.3862485885620117
+
+------------------------------
+llllll (100, 2) GNN differences:
+Mean: 5.3798112869262695
+Std: 3.7183902263641357
+------------------------------
+llllll (1000, 2) GNN differences:
+Mean: 5.554225444793701
+Std: 3.3298211097717285
+------------------------------
+llllll (5000, 2) GNN differences:
+Mean: 5.392727851867676
+Std: 3.143357515335083
+
+
+Multidesign
+learned_models/multidesign_pgnn_r100_ms2.pt
+------------------------------
+wnwwnw GNN differences:
+Mean: 2.4726786613464355
+Std: 2.8096508979797363
+------------------------------
+llllll GNN differences:
+Mean: 5.819369792938232
+Std: 3.7078404426574707
+
+learned_models/multidesign_pgnn_r1000_ms2.pt
+------------------------------
+wnwwnw GNN differences:
+Mean: 2.242436170578003
+Std: 2.183420419692993
+------------------------------
+llllll GNN differences:
+Mean: 5.509887218475342
+Std: 3.3760759830474854
+
+learned_models/multidesign_pgnn_r5000_ms2.pt
+------------------------------
+wnwwnw GNN differences:
+Mean: 2.299320697784424
+Std: 2.6498303413391113
+------------------------------
+llllll GNN differences:
+Mean: 5.600121974945068
+Std: 3.280949592590332
+
